@@ -1,9 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
-import config from "./config";
+import config from "./config.js";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import productRoute from "./routes/productRoute"
+import productRoute from "./routes/productRoute.js"
 
 //Express
 const server = express();
