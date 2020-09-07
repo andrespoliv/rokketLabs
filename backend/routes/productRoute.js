@@ -1,6 +1,5 @@
 import express from "express";
 import Product from "../models/productModel"
-import { isAuth, isAdmin, getToken } from "../util";
 
 const router = express.Router();
 
@@ -23,7 +22,7 @@ router.get("/", async(req, res)=>{
     res.send(products);
 });
 
-//Falta hacer funcionar middleware de isAuth e isAdmin y agregarlo
+
 router.post("/", async(req, res)=>{
     const product = new Product({
         name: req.body.name,
@@ -43,7 +42,7 @@ router.post("/", async(req, res)=>{
     return res.status(501).send({message: "There is an error"});
 });
 
-//Falta hacer funcionar middleware de isAuth e isAdmin y agregarlo
+
 router.put("/:id", async(req, res)=>{
     const productId = req.params.id;
     const product = await Product.findById(productId);
@@ -65,7 +64,7 @@ router.put("/:id", async(req, res)=>{
     
 });
 
-//Falta hacer funcionar middleware de isAuth e isAdmin y agregarlo
+
 router.delete("/:id", async(req, res)=>{
     const deletedProduct = await Product.findById(req.params.id);
     if(deletedProduct){
