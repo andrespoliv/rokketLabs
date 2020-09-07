@@ -21,7 +21,7 @@ Dependencies: "express", "dotenv", "mongoose" and "body-parser".
 For further information please consult the official documentation.
 
 For frontend:
-"react", "react-dom-router", "react-redux", "redux-thunk" and "axios".
+"react", "react-router-dom", "react-redux", "redux-thunk" and "axios".
 
 For further information please consult the official documentation.
 
@@ -74,9 +74,15 @@ First, install backend dependencies. Move your path into /backend and write "npm
 
 Second, check server is running properly. To do that you'll need to write "node server.js".
 
-Remark: if you happen to run into an error related to ES6 please check this thread:https://stackoverflow.com/questions/58384179/syntaxerror-cannot-use-import-statement-outside-a-module
+###Remark: if you happen to run into an error related to ES6 (import module) please include inside package.json file "type":"module" as the first element of the object as suggested below:
 
-Once server is running, open a new terminal and move your path into /frontend, then install the dependencies "npm i dependency1 dependency2..." following the names stated above.
+//package.json file
+{
+  "type": "module",
+  ...
+}
+
+Repeat server initialization, it should be working by now. Once server is running, open a new terminal and move your path into /frontend, then install the dependencies "npm i dependency1 dependency2..." following the names stated above.
 
 After that, write "npm start", after a couple of seconds the app should open the browser and start.
 
